@@ -7,7 +7,7 @@
     height: 90%;
 }
 
-/* sx */
+/********sx********/
 #chatList{
     width: 30%;
     height: 100%;
@@ -54,18 +54,52 @@
     width: 50px;
 }
 
-/* dx */
+/********dx*******/
 #chatContent{
     width: 70%;
     height: 100%;
     background-color: red;
 }
 
+/* body Chat */
 #bodyChat{
     height: 84%;
     background-image: url('../img/mine.jpg');
+    padding: 4rem 6rem;
 }
 
+.sentMessage{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.receivedMessage{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.spanFontClass{
+    font-size: 0.7rem;
+}
+
+.sent,
+.received{
+    width: 35%;
+}
+
+.sent{
+    background-color: #d5f9ba;
+}
+
+.received{
+    background-color: white;
+}
+
+
+
+/* bar add message */
 #addMessageBar{
     height: 8%;
     background-color: #f3eeea;
