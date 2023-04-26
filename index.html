@@ -18,47 +18,49 @@
         <div id="back" class="vh-100 d-flex justify-content-center align-items-center">
             <div id="main-container" class="d-flex justify-content-between align-items-center bg-white">
                 <!-- sx -->
-                <div id="chatList">
+                <div id="chatList" class="d-flex flex-column justify-content-between">
                     <!-- header sx -->
-                    <div id="header-sx" class="d-flex justify-content-between align-items-center px-4">
-                        <!-- profile picture and name -->
-                        <div id="profileId" class="d-flex justify-content-start align-items-center">
-                            <img src="./assets/img/avatar_io.jpg" alt="avatar-me" class="rounded-circle img-fluid">
-                            <span class="text-capitalize ms-2">sofia</span>
+                    <div id="topSx">
+                        <div id="header-sx" class="d-flex justify-content-between align-items-center px-4">
+                            <!-- profile picture and name -->
+                            <div id="profileId" class="d-flex justify-content-start align-items-center">
+                                <img src="./assets/img/avatar_io.jpg" alt="avatar-me" class="rounded-circle img-fluid">
+                                <span class="text-capitalize ms-2">sofia</span>
+                            </div>
+                            <!-- interactive icons header -->
+                            <div id="iconsHeader" class="d-flex justify-content-start align-items-center">
+                                <i class="fa-solid fa-circle-notch" style="color: #b1b1b1;"></i>
+                                <i class="fa-solid fa-message mx-4" style="color: #b1b1b1;"></i>
+                                <i class="fa-solid fa-ellipsis-vertical" style="color: #b1b1b1;"></i>
+                            </div>
                         </div>
-                        <!-- interactive icons header -->
-                        <div id="iconsHeader" class="d-flex justify-content-start align-items-center">
-                            <i class="fa-solid fa-circle-notch" style="color: #b1b1b1;"></i>
-                            <i class="fa-solid fa-message mx-4" style="color: #b1b1b1;"></i>
-                            <i class="fa-solid fa-ellipsis-vertical" style="color: #b1b1b1;"></i>
+                        <!-- alert notifications -->
+                        <div id="alertNotifications" class="d-flex justify-content-start align-items-center">
+                            <i class="fa-solid fa-bell-slash ms-4" style="color: #8edafc;"></i>
+    
+                            <div class="ms-2">
+                                <p class="m-0 pFontClass">Ricevi notifiche di nuovi messaggi</p>
+                                <p class="m-0 text-decoration-underline text-secondary pFontClass">Attiva notifiche desktop</p>
+                            </div>
                         </div>
-                    </div>
-                    <!-- alert notifications -->
-                    <div id="alertNotifications" class="d-flex justify-content-start align-items-center">
-                        <i class="fa-solid fa-bell-slash ms-4" style="color: #8edafc;"></i>
-
-                        <div class="ms-2">
-                            <p class="m-0 pFontClass">Ricevi notifiche di nuovi messaggi</p>
-                            <p class="m-0 text-decoration-underline text-secondary pFontClass">Attiva notifiche desktop</p>
-                        </div>
-                    </div>
-                    <!-- search bar -->
-                    <div id="searchBar" class="p-2">
-                        <div class="input-group">
-                            <span class="input-group-text">
-                                <i class="fa-solid fa-magnifying-glass" style="color: #b1b1b1;"></i>
-                            </span>
-                            <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat">
+                        <!-- search bar -->
+                        <div id="search-Bar" class="p-2 d-flex justify-content-center align-items-center">
+                            <div class="input-group p-0">
+                                <span class="input-group-text">
+                                    <i class="fa-solid fa-magnifying-glass" style="color: #b1b1b1;"></i>
+                                </span>
+                                <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat">
+                            </div>
                         </div>
                     </div>
                     <!-- contact list -->
-                    <div id="contactList">
+                    <div id="bottomSx">
                         <ul class="list-group rounded-0">
-                            <li class="list-group-item-action py-3 px-4 d-flex justify-content-between border-top">
+                            <li v-for="(el, index) in contacts" :key="index" class="list-group-item-action py-3 px-4 d-flex justify-content-between border-top">
                                 <div class="d-flex">
-                                    <img src="./assets/img/avatar_1.jpg" alt="avatar1" class="rounded-circle img-fluid">
+                                    <img :src="el.avatar" :alt="'avatar' + (index+1)" class="rounded-circle img-fluid">
                                     <div class="ms-2">
-                                        <p class="m-0">Michele</p>
+                                        <p class="m-0">{{el.name}}</p>
                                         <p class="m-0 text-secondary pFontClass">Ultimo messaggio inviato</p>
                                     </div>
                                 </div>
@@ -66,7 +68,6 @@
                                     <span class="pFontClass">12:00</span>
                                 </div>
                             </li>
-                            
                         </ul>
                     </div>
                 </div>

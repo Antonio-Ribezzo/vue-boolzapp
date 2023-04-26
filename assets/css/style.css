@@ -14,9 +14,13 @@
     background-color: white;
 }
 
-#header-sx,
-#header-dx{
-    height: 8%;
+/* topSx */
+#topSx{
+    height: 30%;
+}
+
+#header-sx{
+    height: 80px;
     background-color: #eaeaea;
 }
 
@@ -27,7 +31,7 @@
 
 /* alertNotifications */
 #alertNotifications{
-    height: 8%;
+    height: calc((100% - 140px));
     background-color: #8edafc;
 }
 
@@ -42,15 +46,17 @@
 }
 
 /* search Bar */
-#searchBar{
+#search-Bar{
+    height: 60px;
     background-color: #fafafa;
 }
 
-/* contact list */
-#contactList{
-    overflow-y: auto;
+/* bottom Sx */
+#bottomSx{
+    height: 70%;
+    overflow-y: scroll;
 }
-#contactList>ul>li>div>img{
+#bottomSx>ul>li>div>img{
     width: 50px;
 }
 
@@ -59,6 +65,11 @@
     width: 70%;
     height: 100%;
     background-color: red;
+}
+
+#header-dx{
+    height: 80px;
+    background-color: #eaeaea;
 }
 
 /* body Chat */
