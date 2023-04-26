@@ -1,0 +1,72 @@
+#back{
+    background: linear-gradient(to bottom, #009688 15%, #d9dbd4 15% 80%);
+}
+
+#main-container{
+    width: 80%;
+    height: 90%;
+}
+
+/* sx */
+#chatList{
+    width: 30%;
+    height: 100%;
+    background-color: white;
+}
+
+#header-sx,
+#header-dx{
+    height: 8%;
+    background-color: #eaeaea;
+}
+
+#header-sx>div>img,
+#header-dx>div>img{
+    width: 50px;
+}
+
+/* alertNotifications */
+#alertNotifications{
+    height: 8%;
+    background-color: #8edafc;
+}
+
+.fa-bell-slash{
+    border-radius: 50%;
+    background-color: white;
+    padding: 1rem;
+}
+
+.pFontClass{
+    font-size: 0.7rem;
+}
+
+/* search Bar */
+#searchBar{
+    background-color: #fafafa;
+}
+
+/* contact list */
+#contactList{
+    overflow-y: auto;
+}
+#contactList>ul>li>div>img{
+    width: 50px;
+}
+
+/* dx */
+#chatContent{
+    width: 70%;
+    height: 100%;
+    background-color: red;
+}
+
+#bodyChat{
+    height: 84%;
+    background-image: url('../img/mine.jpg');
+}
+
+#addMessageBar{
+    height: 8%;
+    background-color: #f3eeea;
+}
