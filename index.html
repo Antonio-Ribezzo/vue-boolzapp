@@ -94,20 +94,11 @@
                     </div>
                     <!-- bodyChat -->
                     <div id="bodyChat">
-                        <div class="sentMessage">
-                            <div class="sent rounded d-flex justify-content-between p-2 mb-2">
-                                <span>{{contacts[currentChat].messages[0].message}}</span>
+                        <div v-for="(el,index) in contacts[currentChat].messages" :class="(el.status == 'sent')? 'sentMessage' : 'receivedMessage'">
+                            <div class="rounded d-flex justify-content-between p-2 mb-2" :class="(el.status == 'sent')? 'sent' : 'received'">
+                                <span>{{el.message}}</span>
                                 <div class="d-flex justify-content-end align-items-end">
-                                    <span class="pFontClass text-secondary">{{contacts[currentChat].messages[0].date.substring(11,16)}}</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="receivedMessage">
-                            <div class="received rounded d-flex justify-content-between p-2 mb-2">
-                                <span>Tutto fatto!</span>
-                                <div class="d-flex justify-content-end align-items-end">
-                                    <span class="pFontClass text-secondary">16:15</span>
+                                    <span class="pFontClass text-secondary">{{el.date.substring(11,16)}}</span>
                                 </div>
                             </div>
                         </div>
