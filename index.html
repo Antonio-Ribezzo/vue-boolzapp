@@ -5,6 +5,8 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>Boolzapp</title>
+    <!-- link favicon -->
+    <link rel="icon" type="image/x-icon" href="./assets/img/whatsapp.png">
     <!-- link fontawesome -->
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css' integrity='sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==' crossorigin='anonymous'/>
     <!-- link Bootstrap -->
@@ -56,7 +58,7 @@
                     <!-- contact list -->
                     <div id="bottomSx">
                         <ul class="list-group rounded-0">
-                            <li v-for="(el, index) in contacts" :key="index" class="list-group-item-action py-3 px-4 d-flex justify-content-between border-top">
+                            <li v-for="(el, index) in contacts" :key="index" :id="'chat' + index" class="list-group-item-action py-3 px-4 d-flex justify-content-between border-top" @click="changeChat(index)">
                                 <div class="d-flex">
                                     <img :src="el.avatar" :alt="'avatar' + (index+1)" class="rounded-circle img-fluid">
                                     <div class="ms-2">
@@ -73,13 +75,13 @@
                 </div>
                <!-- dx -->
                 <div id="chatContent" class="d-flex flex-column justify-content-between">
-                    <!-- header sx -->
+                    <!-- header dx -->
                     <div id="header-dx" class="d-flex justify-content-between align-items-center px-4 border-start">
                         <!-- profile picture and name -->
-                        <div id="profileId" class="d-flex justify-content-start align-items-center">
-                            <img src="./assets/img/avatar_1.jpg" alt="avatar1" class="rounded-circle img-fluid">
+                        <div :id="'chat' + currentChat" class="d-flex justify-content-start align-items-center">
+                            <img :src="contacts[currentChat].avatar" :alt="'avatar' + (currentChat + 1)" class="rounded-circle img-fluid">
                             <div class="ms-2">
-                                <p class="m-0">Michele</p>
+                                <p class="m-0">{{contacts[currentChat].name}}</p>
                                 <p class="m-0 text-secondary pFontClass">Ultimo accesso oggi alle 12:00</p>
                             </div>
                         </div>
@@ -94,9 +96,9 @@
                     <div id="bodyChat">
                         <div class="sentMessage">
                             <div class="sent rounded d-flex justify-content-between p-2 mb-2">
-                                <span>Hai portato a spasso il cane</span>
+                                <span>{{contacts[currentChat].messages[0].message}}</span>
                                 <div class="d-flex justify-content-end align-items-end">
-                                    <span class="pFontClass text-secondary">15:30</span>
+                                    <span class="pFontClass text-secondary">{{contacts[currentChat].messages[0].date.substring(11,16)}}</span>
                                 </div>
                             </div>
                         </div>

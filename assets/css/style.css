@@ -16,11 +16,11 @@
 
 /* topSx */
 #topSx{
-    height: 30%;
+    height: 25%;
 }
 
 #header-sx{
-    height: 80px;
+    height: 60px;
     background-color: #eaeaea;
 }
 
@@ -31,7 +31,7 @@
 
 /* alertNotifications */
 #alertNotifications{
-    height: calc((100% - 140px));
+    height: calc((100% - 120px));
     background-color: #8edafc;
 }
 
@@ -53,11 +53,15 @@
 
 /* bottom Sx */
 #bottomSx{
-    height: 70%;
+    height: 75%;
     overflow-y: scroll;
 }
 #bottomSx>ul>li>div>img{
     width: 50px;
+}
+
+#bottomSx>ul>li{
+    cursor: pointer;
 }
 
 /********dx*******/
@@ -68,15 +72,16 @@
 }
 
 #header-dx{
-    height: 80px;
+    height: 60px;
     background-color: #eaeaea;
 }
 
 /* body Chat */
 #bodyChat{
-    height: 84%;
+    height: calc(100% - 120px);
     background-image: url('../img/mine.jpg');
     padding: 4rem 6rem;
+    overflow-y: scroll;
 }
 
 .sentMessage{
@@ -112,6 +117,6 @@
 
 /* bar add message */
 #addMessageBar{
-    height: 8%;
+    height: 60px;
     background-color: #f3eeea;
 }
