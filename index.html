@@ -51,7 +51,7 @@
                                 <span class="input-group-text">
                                     <i class="fa-solid fa-magnifying-glass" style="color: #b1b1b1;"></i>
                                 </span>
-                                <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat">
+                                <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" v-model="search" @keyup="filterContacts(contacts)">
                             </div>
                         </div>
                     </div>

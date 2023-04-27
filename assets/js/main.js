@@ -168,7 +168,9 @@ const { createApp } = Vue
             }
         ],
         message: "",
-        nowDate: luxon.DateTime.now().toString()
+        nowDate: luxon.DateTime.now().toString(),
+        search: ""
+
 
       }
     },
@@ -193,6 +195,18 @@ const { createApp } = Vue
                 }, 1000)
             }
             this.message = ""
+        },
+
+        filterContacts (array){
+            for(let i = 0; i<array.length; i++){
+                if(!array[i].name.toLowerCase().includes(this.search)){
+                    console.log(array[i].name)
+                    // console.log(document.getElementById(`chat${i}`))
+                    document.getElementById(`chat${i}`).classList.add('d-none')
+                } else if(array[i].name.toLowerCase().includes(this.search)){
+                    document.getElementById(`chat${i}`).classList.remove('d-none')   
+                }
+            }
         }
     }
   }).mount('#app')
