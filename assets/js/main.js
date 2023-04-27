@@ -167,7 +167,9 @@ const { createApp } = Vue
                 ],
             }
         ],
-        message: ""
+        message: "",
+        nowDate: luxon.DateTime.now().toString()
+
       }
     },
     methods: {
@@ -178,11 +180,19 @@ const { createApp } = Vue
         addMessage (i, message){
             if(message != ""){
                 this.contacts[i].messages.push({
-                    date: '10/01/2020 15:50:00',
+                    date: this.nowDate,
                     message: message,
                     status: 'sent'
                 })
+                setTimeout(()=>{
+                    this.contacts[i].messages.push({
+                        date: this.nowDate,
+                        message: '👍🏻',
+                        status: 'received'
+                    })
+                }, 1000)
             }
+            this.message = ""
         }
     }
   }).mount('#app')
