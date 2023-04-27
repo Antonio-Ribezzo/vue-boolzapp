@@ -106,6 +106,12 @@
     width: 35%;
 }
 
+.sent:hover,
+.received:hover{
+    cursor: pointer;
+    filter: brightness(0.9);
+}
+
 .sent{
     background-color: #d5f9ba;
 }
@@ -113,8 +119,6 @@
 .received{
     background-color: white;
 }
-
-
 
 /* bar add message */
 #addMessageBar{
