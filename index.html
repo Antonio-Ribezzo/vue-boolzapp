@@ -42,7 +42,7 @@
     
                             <div class="ms-2">
                                 <p class="m-0 pFontClass">Ricevi notifiche di nuovi messaggi</p>
-                                <p class="m-0 text-decoration-underline text-secondary pFontClass">Attiva notifiche desktop</p>
+                                <a href="#"><p class="m-0 text-decoration-underline text-secondary pFontClass">Attiva notifiche desktop</p></a>
                             </div>
                         </div>
                         <!-- search bar -->
@@ -109,7 +109,7 @@
                             <i class="fa-regular fa-face-smile fs-4" style="color: #6b7376;"></i>
                         </div>
                         <div class="input-group mx-4">
-                            <input type="text" class="form-control" placeholder="Scrivi un messaggio">
+                            <input type="text" class="form-control" placeholder="Scrivi un messaggio" v-model="message" @keyup.enter="addMessage(currentChat, message)">
                         </div>
                         <div>
                             <i class="fa-solid fa-microphone fs-4" style="color: #6b7376;"></i>

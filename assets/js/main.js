@@ -166,12 +166,23 @@ const { createApp } = Vue
                     }
                 ],
             }
-        ]
+        ],
+        message: ""
       }
     },
     methods: {
         changeChat(index){
             this.currentChat = index
+        },
+
+        addMessage (i, message){
+            if(message != ""){
+                this.contacts[i].messages.push({
+                    date: '10/01/2020 15:50:00',
+                    message: message,
+                    status: 'sent'
+                })
+            }
         }
     }
   }).mount('#app')

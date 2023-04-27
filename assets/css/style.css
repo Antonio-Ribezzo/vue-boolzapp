@@ -1,5 +1,6 @@
+/* app */
 #back{
-    background: linear-gradient(to bottom, #009688 15%, #d9dbd4 15% 80%);
+    background: linear-gradient(to bottom, #009688 15%, #d9dbd4 15% 100%);
 }
 
 #main-container{
