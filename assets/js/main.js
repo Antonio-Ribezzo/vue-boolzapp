@@ -223,6 +223,13 @@ const { createApp } = Vue
 
         deleteMessage(i){
             document.getElementById('message' +i).classList.add('d-none')
+        },
+
+        messageInfo(elemento){
+            alert(`
+            Messaggio del: ${elemento.date} 
+            Contenuto del messaggio: ${elemento.message}
+            Stato: ${elemento.status}`)
         }
     }
   }).mount('#app')

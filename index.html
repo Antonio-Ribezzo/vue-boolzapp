@@ -104,7 +104,7 @@
                                 <!-- dropdown -->
                                 <div :id="'dropdown' + index" class="dropdownBox position-absolute active rounded border border-2 border-secondary border-opacity-25 bg-white d-none">
                                     <div class="list-group">
-                                        <a href="#" class="list-group-item list-group-item-action">Message info</a>
+                                        <a href="#" class="list-group-item list-group-item-action" @click="messageInfo(el)">Message info</a>
                                         <a href="#" class="list-group-item list-group-item-action" @click="deleteMessage(index)">Delete message</a>
                                     </div>
     
