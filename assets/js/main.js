@@ -230,6 +230,14 @@ const { createApp } = Vue
             Messaggio del: ${elemento.date} 
             Contenuto del messaggio: ${elemento.message}
             Stato: ${elemento.status}`)
+        },
+
+        lastMessageSent(el){
+          return el.messages[el.messages.length-1].message
+        },
+
+        lastmessageHour(el){
+          return el.messages[el.messages.length-1].date.substring(11,16)
         }
     }
   }).mount('#app')

@@ -64,11 +64,11 @@
                                     <img :src="el.avatar" :alt="'avatar' + (index+1)" class="rounded-circle img-fluid">
                                     <div class="ms-2">
                                         <p class="m-0">{{el.name}}</p>
-                                        <p class="m-0 text-secondary pFontClass">Ultimo messaggio inviato</p>
+                                        <p class="m-0 text-secondary pFontClass">{{lastMessageSent(el)}}</p>
                                     </div>
                                 </div>
                                 <div>
-                                    <span class="pFontClass">12:00</span>
+                                    <span class="pFontClass">{{lastmessageHour(el)}}</span>
                                 </div>
                             </li>
                         </ul>
