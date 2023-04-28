@@ -106,8 +106,9 @@
     width: 35%;
 }
 
-.sent:hover,
-.received:hover{
+.sent span:hover,
+.received span:hover{
+    background-color: #202b308a;
     cursor: pointer;
     filter: brightness(0.9);
 }
@@ -118,6 +119,15 @@
 
 .received{
     background-color: white;
+}
+
+/* dropdown */
+.dropdownBox{
+    /* width: 100px;
+    height: 100px; */
+    top: 40%;
+    right: 10%;
+    z-index: 999999;
 }
 
 /* bar add message */

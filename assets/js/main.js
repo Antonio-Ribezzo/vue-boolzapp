@@ -167,11 +167,14 @@ const { createApp } = Vue
                 ],
             }
         ],
+        
         message: "",
+        
         nowDate: luxon.DateTime.now().toString(),
-        search: ""
+        
+        search: "",
 
-
+        active: true
       }
     },
     methods: {
@@ -206,6 +209,20 @@ const { createApp } = Vue
                     document.getElementById(`chat${i}`).classList.remove('d-none')   
                 }
             }
+        },
+
+        dropdown(i){
+            if(this.active == true){
+                document.getElementById('dropdown'+i).classList.remove('d-none')
+                this.active = false
+            } else if(this.active == false){
+                document.getElementById('dropdown'+i).classList.add('d-none')
+                this.active = true
+            }
+        },
+
+        deleteMessage(i){
+            document.getElementById('message' +i).classList.add('d-none')
         }
     }
   }).mount('#app')

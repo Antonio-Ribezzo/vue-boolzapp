@@ -96,10 +96,18 @@
                     <!-- bodyChat -->
                     <div id="bodyChat">
                         <div v-for="(el,index) in contacts[currentChat].messages" :class="(el.status == 'sent')? 'sentMessage' : 'receivedMessage'">
-                            <div class="rounded d-flex justify-content-between p-2 mb-2" :class="(el.status == 'sent')? 'sent' : 'received'">
-                                <span>{{el.message}}</span>
+                            <div :id="'message' + index" class="rounded d-flex justify-content-between p-2 mb-2 position-relative" :class="(el.status == 'sent')? 'sent' : 'received'" @click="dropdown(index)">
+                                <span class="p-1">{{el.message}}</span>
                                 <div class="d-flex justify-content-end align-items-end">
                                     <span class="pFontClass text-secondary">{{el.date.substring(11,16)}}</span>
+                                </div>
+                                <!-- dropdown -->
+                                <div :id="'dropdown' + index" class="dropdownBox position-absolute active rounded border border-2 border-secondary border-opacity-25 bg-white d-none">
+                                    <div class="list-group">
+                                        <a href="#" class="list-group-item list-group-item-action">Message info</a>
+                                        <a href="#" class="list-group-item list-group-item-action" @click="deleteMessage(index)">Delete message</a>
+                                    </div>
+    
                                 </div>
                             </div>
                         </div>
