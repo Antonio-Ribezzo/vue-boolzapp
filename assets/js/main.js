@@ -203,9 +203,9 @@ const { createApp } = Vue
         filterContacts (array){
             for(let i = 0; i<array.length; i++){
                 // se la chiave "name" dell'array dei contatti include almeno una lettera del valore digitato nell'input allora verrà rimossa la classe display none altrimenti verrà aggiunta 
-                if(!array[i].name.toLowerCase().includes(this.search)){
+                if(!array[i].name.toLowerCase().includes(this.search.toLowerCase())){
                     document.getElementById(`chat${i}`).classList.add('d-none')
-                } else if(array[i].name.toLowerCase().includes(this.search)){
+                } else if(array[i].name.toLowerCase().includes(this.search.toLowerCase())){
                     document.getElementById(`chat${i}`).classList.remove('d-none')   
                 }
             }
